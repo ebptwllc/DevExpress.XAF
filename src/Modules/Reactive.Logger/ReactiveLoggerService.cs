@@ -109,7 +109,7 @@ namespace Xpand.XAF.Modules.Reactive.Logger{
 
             return source.Where(_ => location == null || _.Location == location.Name)
                 .Where(_ => !methods.Any() || methods.Contains(_.Method))
-                .Where(_ => rxAction == RXAction.All || _.RXAction.HasAnyFlag(rxAction));
+                .Where(_ => rxAction == RXAction.All || _.RXAction.HasFlag(rxAction));
         }
 
         [PublicAPI]
